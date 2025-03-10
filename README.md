@@ -43,7 +43,7 @@ El **protocolo BATMAN** (Better Approach To Mobile Ad-hoc Networking) es un algo
 - **Optimización del Tráfico:** Selecciona rutas basadas en la calidad del enlace, reduciendo la latencia y la pérdida de paquetes.
 - **Simplicidad en la Implementación:** Facilita la configuración en entornos con nodos móviles o donde la conectividad es variable.
 
-En el caso del protocolo BATMAN, este envíe pequeños paquetes llamados OGM (Originator Message) para anunciar su presencia en cada nodo de la red, estos paquetes se propagan a través de la red, permitiendo a los nodos descubrir rutas posibles, de esta manera, en lugar de calcular una única ruta óptima en toda la red, cada nodo solo decide a qué vecino enviar los datos, basándose en la cantidad de OGMs recibidos, esto hace que el protocolo sea más flexible y resistente a cambios en la red. Si un nodo recibe OGMs de varios caminos, elige el más confiable (el que recibe con mayor frecuencia) y si una ruta se interrumpe, BATMAN la descarta y utiliza otra automáticamente.
+En el caso del protocolo BATMAN, este envía pequeños paquetes llamados OGM (Originator Message) para anunciar su presencia en cada nodo de la red, estos paquetes se propagan a través de la red, permitiendo a los nodos descubrir rutas posibles, de esta manera, en lugar de calcular una única ruta óptima en toda la red, cada nodo solo decide a qué vecino enviar los datos, basándose en la cantidad de OGMs recibidos, esto hace que el protocolo sea más flexible y resistente a cambios en la red. Si un nodo recibe OGMs de varios caminos, elige el más confiable (el que recibe con mayor frecuencia) y si una ruta se interrumpe, BATMAN la descarta y utiliza otra automáticamente.
 
 ## Diseño y Modelación de la Red
 
