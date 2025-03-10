@@ -1,12 +1,6 @@
 # Proyecto red ad-hoc
 
-## Portada
-
-**Título del Proyecto:** Implementación de Red Ad Hoc
-**Materia:** Redes de Computación  
-**Alumnos:** 
-
-## Resumen Ejecutivo
+## Resumen
 
 Este informe detalla la implementación de una red ad hoc tipo **mesh** que utiliza el **protocolo BATMAN**. El proyecto contempla un mínimo de 4 nodos (PCs) con el objetivo de establecer una red de comunicación robusta y dinámica en el campus universitario. Se aborda la configuración teórica, la selección de hardware, parámetros de comunicación, y se plantean estrategias para la simulación y análisis de la red.
 
@@ -61,8 +55,6 @@ Se plantea la ubicación de los nodos en puntos estratégicos del campus para:
 ### Selección de Hardware
 
 - **PCs:** Equipos con capacidad suficiente para ejecutar el protocolo BATMAN y gestionar la comunicación ad hoc.
-- **Adaptadores Inalámbricos:** Que soporten el modo ad hoc y funcionen en las frecuencias seleccionadas (2.4 GHz o 5 GHz).
-- **Accesorios Adicionales:** Posible uso de antenas de mayor ganancia o repetidores para mejorar el alcance en áreas críticas.
 
 ### Parámetros de Configuración
 
@@ -71,7 +63,6 @@ Se plantea la ubicación de los nodos en puntos estratégicos del campus para:
 - **Configuración del Protocolo BATMAN:**
   - Instalación del software BATMAN en cada nodo.
   - Ajuste de parámetros para optimizar el enrutamiento en función de la topología y condiciones ambientales.
-- **Seguridad:** Implementación de medidas de cifrado y autenticación para proteger la integridad de la información transmitida.
 
 ## Herramientas y Simulación
 
