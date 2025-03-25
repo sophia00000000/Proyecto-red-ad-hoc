@@ -52,11 +52,13 @@ Hay 13 canales en la mayoría de los países, pero solo 3 no se solapan:
 - Canal 1 (2412 MHz)
 - Canal 6 (2437 MHz)
 - Canal 11 (2462 MHz)
+
 (Normalmente se recomienda usar el canal 6)
 
 Para redes en 5 GHz:
 - Más canales disponibles (36, 40, 44, 48... hasta 165).
 - Se evita canales DFS (52-64 y 100-144) ya que pueden estar restringidos en algunos países o lugares.
+
 (Normalmente se recomienda usar el canal 36 o 44)
 
 ## Características de los nodos
