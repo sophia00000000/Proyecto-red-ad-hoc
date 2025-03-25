@@ -39,6 +39,26 @@ El **protocolo BATMAN** (Better Approach To Mobile Ad-hoc Networking) es un algo
 
 En el caso del protocolo BATMAN, este envía pequeños paquetes llamados OGM (Originator Message) para anunciar su presencia en cada nodo de la red, estos paquetes se propagan a través de la red, permitiendo a los nodos descubrir rutas posibles, de esta manera, en lugar de calcular una única ruta óptima en toda la red, cada nodo solo decide a qué vecino enviar los datos, basándose en la cantidad de OGMs recibidos, esto hace que el protocolo sea más flexible y resistente a cambios en la red. Si un nodo recibe OGMs de varios caminos, elige el más confiable (el que recibe con mayor frecuencia) y si una ruta se interrumpe, BATMAN la descarta y utiliza otra automáticamente.
 
+### Direccionamiento
+Para el protocolo BATMAN en una red ad-hoc, el direccionamiento suele ser plano y basado en IPv4, ya que es el mas sencilo y practico al todos los nodos compartir la misma red.
+
+### Modulación y Canalización en una Red Ad-hoc con BATMAN
+La modulación define cómo se transmiten los datos a nivel físico en la señal de radio. BATMAN no define una modulación específica, sino que usa la que proporciona el hardware Wi-Fi. Dependiendo de si se prueba en 2.4 GHz, se usa OFDM (802.11g/n) para evitar DSSS (que es más lento). Si se prueba en 5 GHz, se usa OFDM con 256-QAM (802.11ac o superior) para mayor velocidad.
+
+La canalización define en qué frecuencia específica operará cada nodo de la red BATMAN.
+
+Para redes en 2.4 GHz:
+Hay 13 canales en la mayoría de los países, pero solo 3 no se solapan:
+- Canal 1 (2412 MHz)
+- Canal 6 (2437 MHz)
+- Canal 11 (2462 MHz)
+(Normalmente se recomienda usar el canal 6)
+
+Para redes en 5 GHz:
+- Más canales disponibles (36, 40, 44, 48... hasta 165).
+- Se evita canales DFS (52-64 y 100-144) ya que pueden estar restringidos en algunos países o lugares.
+(Normalmente se recomienda usar el canal 36 o 44)
+
 ## Características de los nodos
 ### Diseño y Modelación de la Red
 
