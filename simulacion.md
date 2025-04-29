@@ -127,7 +127,8 @@ Para INET 4.5 (biblioteca de modelos de código abierto para la simulación de r
 ```bash
 git clone https://github.com/aarizaq/inetmanet-4.x.git
 cd inetmanet-4.x
-git checkout -b inet4.5 origin/inet4.5
+git checkout v4.2.x
+find . -name "Batman" -o -name "batman"
 ```
 
 Clic en File -> Import
@@ -141,6 +142,12 @@ Clic en General -> Existing Projects into Workspace
 Seleccionar la carpeta inetmanet-4.x -> Finish
 
 ![imagen](https://github.com/user-attachments/assets/7d17acff-691d-48c0-90f7-27323613ecf9)
+
+Y así está disponible B.A.T.M.A.N junto con el ejemplo base a utilizar: ieee80211
+
+![imagen](https://github.com/user-attachments/assets/40167b4e-2a17-4977-9d5f-98b2328e9edc)
+
+
 
 
 ## Comandos totales resumen
