@@ -120,6 +120,29 @@ WITH_OSG=no
 
 ---
 
+## Configuración de B.A.T.M.A.N
+
+Para INET 4.5 (biblioteca de modelos de código abierto para la simulación de redes de comunicación), la mejor opción es utilizar INETMANET ya que contiene los protocolos MANET incluyendo BATMAN, específicamente diseñados para ser compatibles con la versión de INET. Para descargarlo se utilizan los siguientes comandos:
+
+```bash
+git clone https://github.com/aarizaq/inetmanet-4.x.git
+cd inetmanet-4.x
+git checkout -b inet4.5 origin/inet4.5
+```
+
+Clic en File -> Import
+
+![imagen](https://github.com/user-attachments/assets/5cbe2af0-f627-45b8-993f-bd07f863b250)
+
+Clic en General -> Existing Projects into Workspace
+
+![imagen](https://github.com/user-attachments/assets/65d66750-a723-4e06-8078-b4ffd0adf9a6)
+
+Seleccionar la carpeta inetmanet-4.x -> Finish
+
+![imagen](https://github.com/user-attachments/assets/7d17acff-691d-48c0-90f7-27323613ecf9)
+
+
 ## Comandos totales resumen
 
 ```bash
@@ -135,4 +158,7 @@ sudo apt-get install build-essential gcc g++ bison flex perl qtbase5-dev qtchoos
 sudo apt-get install libopenscenegraph-dev
 ./configure
 make
+git clone https://github.com/aarizaq/inetmanet-4.x.git
+cd inetmanet-4.x
+git checkout -b inet4.5 origin/inet4.5
 ```
