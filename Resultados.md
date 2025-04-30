@@ -30,6 +30,7 @@ Tiempo: 1.115108167276, Nodo: host[2], Origen: 10.0.0.2, Reenviado por: 10.0.0.2
 - **SeqNum (Sequence Number):** número de secuencia del OGM (incrementa con el tiempo, permite detectar OGMs antiguos).
 - **Distancia:** N/A — BATMAN no usa métrica de distancia física.
 
+
 ---
 # Tiempo
 
@@ -48,16 +49,17 @@ Resta: [1.3907499996079764e-07, 0.02242032618699996, 1.6191500007423087e-07, 0.0
 
 Los OGMs se generan de forma regular aunque hay picos de intervalos más largos.
 
+
 ---
 ## TTL VS Tiempo
 
-Para ver si los paquetes se degradan mucho 
+Para ver si los paquetes se degradan mucho. 
 Un TTL bajo puede significar rutas largas o reenvíos excesivos. 
 
 ![image](https://github.com/user-attachments/assets/d9eca491-df3a-46dc-a946-18475f91d513)
 
 ---
-## Origem
+## Origen
 
 Para concocer cuántos OGMs envió cada nodo y detectar nodos activos, silenciados o que participan más en la red.
 
@@ -73,11 +75,11 @@ Para evaluar la calidad de los enlaces, TQ bajo puede significar interferencias 
 ---
 # Distancia 
 
-BATMAN no trabaja con la distancia física entre los nodos, debido a varios factores, está diseñado para redes ad-hoc, lo que significa que no dependen de una infraestructura centralizada como enrutadores o puntos de acceso fijos, se dinámico. Los nodos de la red pueden unirse y abandonarla en cualquier momento, y la topología de la red se forma espontáneamente.
+BATMAN no trabaja con la distancia física entre los nodos, debido a varios factores, está diseñado para redes ad-hoc, lo que significa que no dependen de una infraestructura centralizada como enrutadores o puntos de acceso fijos, es dinámico. Los nodos pueden unirse y abandonar la red en cualquier momento, y la topología se forma espontáneamente.
 
 Está  optimizado para entornos donde los nodos pueden moverse, sus rangos de cobertura cambian, las conexiones se pierden y se establecen nuevas. Incluso si los nodos permanecen estáticos, la calidad de los enlaces inalámbricos entre ellos puede variar debido a interferencias.
 
-**B.A.T.M.A.N. no considera distancia física entre nodos en su funcionamiento, se basa en la calidad de los enlaces (TQ) y la topología de la red.
+**B.A.T.M.A.N. no considera distancia física entre nodos** en su funcionamiento, se basa en la calidad de los enlaces (TQ) y la topología de la red.
 No calcula la distancia completa entre un origen y un destino, sino que se enfoca en encontrar el mejor nodo para el siguiente salto y luego deja que ese nodo haga lo mismo hasta que el paquete llegue al destino. 
 Cada nodo mantiene información sobre el mejor siguiente salto para cada destino, lo que implica una distancia variable según la configuración de la red.
 
