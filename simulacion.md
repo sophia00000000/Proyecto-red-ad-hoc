@@ -120,8 +120,6 @@ WITH_OSG=no
 
 ---
 
- ***
-
 # Configuración de B.A.T.M.A.N
 
 Para INET 4.5 (biblioteca de modelos de código abierto para la simulación de redes de comunicación), la mejor opción es utilizar INETMANET ya que contiene los protocolos MANET incluyendo BATMAN, específicamente diseñados para ser compatibles con la versión de INET. Para descargarlo se utilizan los siguientes comandos:
