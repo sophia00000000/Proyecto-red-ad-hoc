@@ -82,7 +82,7 @@ TQ bajo puede significar interferencias o rutas inestables.
 
 ![image](https://github.com/user-attachments/assets/a1c2161f-ca90-45d7-932e-68e89728f298)
 
-El QT varpia mucho, esto es nomarl en la simulación, ya que Batman actualiza sus rutas con frecuencia y los cambios en la tipologia hacen que el TQ se ajuste rápidamente. 
+El QT varpia mucho, esto es nomarl en la simulación, ya que Batman actualiza sus rutas con frecuencia y los cambios en la topologia hacen que el TQ se ajuste rápidamente. 
 
 ---
 # Distancia 
