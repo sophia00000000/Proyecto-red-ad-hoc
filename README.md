@@ -89,17 +89,14 @@ Se plantea la ubicación de los nodos en puntos estratégicos del campus para:
   - Involucra el uso de herramientas como **bactl** para ver la tabla de enrutamiento, vecinos y calidad del enlace.
 
 ## Servicios
-Con una red ad-hoc basada en el protocolo B.A.T.M.A.N., se puede ofrecer varios servicios descentralizados sin necesidad de un punto de acceso central. Algunos de los servicios que podrías implementar incluyen:
+Con una red ad-hoc basada en el protocolo B.A.T.M.A.N., se puede ofrecer varios servicios descentralizados sin necesidad de un punto de acceso central. Algunos de los servicios que podría implementar incluyen:
 - Intercambio de datos: implementar servicios de transferencia de archivos entre nodos utilizando protocolos como FTP O SCP.
-- Comunicación y colaboración: se habilitan aplicaciones de mensajería o VOIP para evaluar la latencia y estabilidad.
-- Servicios web locales: hospedar paginas web o aplicaciones internas, un ejmeplo de esto puede ser el portal informativo para el campus.
-- Monitoreo y gestión: Se intalan herramientas de supervisión para registrar el trafico, detectar anomalías y generar alertas en caso de incidencias.
-- Requerimientos de seguridad y rendimiento: Se establece parámetros claros de ancho de banda y latencia máxima para cada servicio. Tambien implementar mecanismos de autenticación y cifrado (por ejemplo, WPA2 para la red ad hoc o VPN sobre la malla) para aseurar la comunicación.
+- Comunicación y colaboración: se habilitan aplicaciones de mensajería para evaluar la latencia y estabilidad.
 
 ## Pruebas a realizar
 
 ### Herramientas y Simulación
-Para la fase de simulación se utilizarán herramientas como NS-3 o OMNeT++. Estas plataformas permitirán:
+Para la fase de simulación se utilizará la herramienta OMNeT++. Esta plataforma permitirá:
 - Modelar y simular el comportamiento de la red mesh.
 - Evaluar métricas de desempeño como latencia, tasa de transferencia y pérdida de paquetes.
 - Validar la efectividad del protocolo BATMAN en la gestión de rutas dinámicas.
@@ -110,12 +107,6 @@ Para la fase de simulación se utilizarán herramientas como NS-3 o OMNeT++. Est
 - **Interferencias:** Posibles interferencias de otros dispositivos o redes en el entorno universitario.
 - **Variabilidad de la Topología:** Cambios en la configuración de la red debido a la movilidad o desconexión de nodos.
 - **Errores de Configuración:** Fallos en la asignación de direcciones IP o en la configuración del protocolo BATMAN.
-
-### Medidas de Seguridad
-
-- **Cifrado de la Comunicación:** Implementación de protocolos de seguridad (como WPA2) para proteger la información.
-- **Autenticación de Nodos:** Establecimiento de mecanismos de autenticación para evitar accesos no autorizados.
-- **Monitoreo y Mantenimiento:** Procedimientos para el monitoreo constante de la red y la realización de ajustes preventivos ante fallos.
 
 ### Plan de pruebas detallado
 
@@ -136,7 +127,6 @@ Para la fase de simulación se utilizarán herramientas como NS-3 o OMNeT++. Est
 
 #### Pruebas de Integridad y Seguridad en Mensajería
 - Verificar que los mensajes no se corrompan o pierdan durante la transmisión.
-- Implementar cifrado en la comunicación mediante OpenSSL o GnuPG para garantizar la seguridad de los mensajes.
 - Probar retransmisión en caso de fallos en la entrega de mensajes.
 
 #### Robustez y Resiliencia
