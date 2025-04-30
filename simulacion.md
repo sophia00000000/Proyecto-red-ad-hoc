@@ -4,7 +4,7 @@
 
 ## 1. Descargar OMNeT++
 
-Descargar desde la página oficial:  
+Descargar desde la página oficial  
 Archivo descargado:
 
 ```
@@ -120,7 +120,7 @@ WITH_OSG=no
 
 ---
 
-## Configuración de B.A.T.M.A.N
+# Configuración de B.A.T.M.A.N
 
 Para INET 4.5 (biblioteca de modelos de código abierto para la simulación de redes de comunicación), la mejor opción es utilizar INETMANET ya que contiene los protocolos MANET incluyendo BATMAN, específicamente diseñados para ser compatibles con la versión de INET. Para descargarlo se utilizan los siguientes comandos:
 
@@ -145,13 +145,16 @@ Seleccionar la carpeta inetmanet-4.x -> Finish
 ![imagen](https://github.com/user-attachments/assets/7d17acff-691d-48c0-90f7-27323613ecf9)
 
 Y así está disponible B.A.T.M.A.N junto con el ejemplo base a utilizar: ieee80211
+**Ruta:** inetmanet-4.x/examples/adhoc/ieee80211/
 
 ![imagen](https://github.com/user-attachments/assets/40167b4e-2a17-4977-9d5f-98b2328e9edc)
 
 
 ## Configuración de ieee80211
 
-Ruta: inetmanet-4.x/src/inet/routing/extras/Batman.ned 
+**Ruta:** inetmanet-4.x/src/inet/routing/extras/Batman.ned
+![imagen](https://github.com/user-attachments/assets/dc0605d4-be3a-4c37-ad08-f3c0318e23b2)
+
 Agregar al final del archivo Batman.net el siguiente fragmento de còdigo:
 
 ```bash
@@ -163,7 +166,9 @@ gates:
 ```
 En OMNeT++, los gates son puntos de entrada y salida que permiten que los módulos simples se comuniquen entre sí. Cuando se modelan redes, estos gates permiten el envío y recepción de mensajes entre capas (por ejemplo, entre la capa de red y la capa de enlace o aplicación). INETMANET a veces tiene módulos heredados o incompletos, y al personalizarlo era necesario permitir conexiones explícitas entre módulos.
 
-Ruta: inetmanet-4.x/src/inet/routing/extras/batman/BatmanMain.cc
+**Ruta:** inetmanet-4.x/src/inet/routing/extras/batman/BatmanMain.cc
+![imagen](https://github.com/user-attachments/assets/a55fb165-04b0-430b-8331-9f19295f23f7)
+
 Hay que hacer varios cambios en el archivo BatmanMain.cc, primero, se agregaron cabeceras para obtener información de movilidad, manipular archivos y trabajar con coordenadas:
 
 ```bash
@@ -201,9 +206,9 @@ outTxt << "Tiempo: " << simTime()
        ...
        << ", Distancia: " << distance << " m";
 ```
-Esto para analizar el comportamiento del protocolo BATMAN en una red móvil y estudiar cómo varía la distancia entre nodos con respecto al reenvío de paquetes, TTL o calidad del enlace (TQ), en el caso de la distancia siempre va a aparecer N/A debido a que BATMAN no calcula la distancia completa entre un nodo origen y un destino. Su enfoque se basa en encontrar el mejor vecino de un solo salto para cada destino, en lugar de determinar la ruta óptima completa.
+Esto para analizar el comportamiento del protocolo BATMAN en una red móvil y estudiar cómo varía la distancia entre nodos con respecto al reenvío de paquetes, TTL o calidad del enlace (TQ), en el caso de la distancia siempre va a aparecer *N/A* debido a que BATMAN no calcula la distancia completa entre un nodo origen y un destino. Su enfoque se basa en encontrar el mejor vecino de un solo salto para cada destino, en lugar de determinar la ruta óptima completa.
   
-## Comandos totales resumen
+## Resumen Comandos totales
 
 ```bash
 sudo apt install tar
