@@ -33,7 +33,7 @@ Tiempo: 1.115108167276, Nodo: host[2], Origen: 10.0.0.2, Reenviado por: 10.0.0.2
 ---
 # Tiempo
 
-Los valores de tiempo en el archivo son acumulativos, entonces, para el análisis de la frecuenia en que ocurren los eventos tendríamos q restar cada uno con su anterior.
+Los valores de tiempo en el archivo son acumulativos, entonces, para el análisis de la frecuenia en que ocurren los eventos tendríamos que restar cada uno con su anterior.
 Esto permitirá obtener el intervalo entre eventos e identificar picos de actividad o inactividad.
 
 
@@ -47,6 +47,7 @@ Resta: [1.3907499996079764e-07, 0.02242032618699996, 1.6191500007423087e-07, 0.0
 
 
 Los OGMs se generan de forma regular aunque hay picos de intervalos más largos.
+
 ---
 ## TTL VS Tiempo
 
@@ -71,17 +72,31 @@ Para evaluar la calidad de los enlaces, TQ bajo puede significar interferencias 
 
 ---
 # Distancia 
-En BATMAN La distancia se refiere a la distancia entre nodos en la red, y se mide por el número de saltos (hops) entre nodos.
-No calcula la distancia completa entre un origen y un destino, sino que se enfoca en encontrar el mejor nodo para el siguiente salto y luego deja que ese nodo haga lo mismo hasta que el paquete llegue al destino. 
 
+BATMAN no trabaja con la distancia física entre los nodos, debido a varios factores, está diseñado para redes ad-hoc, lo que significa que no dependen de una infraestructura centralizada como enrutadores o puntos de acceso fijos, se dinámico. Los nodos de la red pueden unirse y abandonarla en cualquier momento, y la topología de la red se forma espontáneamente.
+
+Está  optimizado para entornos donde los nodos pueden moverse, sus rangos de cobertura cambian, las conexiones se pierden y se establecen nuevas. Incluso si los nodos permanecen estáticos, la calidad de los enlaces inalámbricos entre ellos puede variar debido a interferencias.
+
+**B.A.T.M.A.N. no considera distancia física entre nodos en su funcionamiento, se basa en la calidad de los enlaces (TQ) y la topología de la red.
+No calcula la distancia completa entre un origen y un destino, sino que se enfoca en encontrar el mejor nodo para el siguiente salto y luego deja que ese nodo haga lo mismo hasta que el paquete llegue al destino. 
 Cada nodo mantiene información sobre el mejor siguiente salto para cada destino, lo que implica una distancia variable según la configuración de la red.
 
 **Aproximación:**
-Se podría aproximar la distancia contando el número de saltos que el paquete sigue hasta el destino, considerando la información de la tabla de enrutamiento de cada nodo en el camino. Cada vez que un paquete de un salto se puede sumir que avanzó cierta distancia promedio 
+
+Por los fines de la simulación, se podría aproximar la distancia contando el número de saltos que el paquete sigue hasta el destino, considerando la información de la tabla de enrutamiento de cada nodo en el camino. Cada vez que un paquete de un salto se puede sumir que avanzó cierta distancia promedio 
 EJM:
-- o hops = 0m
-- 1 hops = 100m
+- 0 hops = 0m
+- 1 hops = 100m 
 
-A su vez, cada vez que un ndoo genera un paquete, le pone un TTL inicial y cada salto lo reduce en una unidad. 
+Usando TQ (calidad de enlace) podriamos asumir que:
+- **TQ = 255** es un enlace perfecto, distancia muy corta.
+- **TQ = 0** enlace roto o muy lejano.
+Podemos hacer una estimación porporcional donde el rango máximo son 100 metros.
 
-###
+```
+Distancia= rangoMaximo * (1- (TQ/255))
+
+```
+Ejemplo:
+- TQ= 255 entonces, Distancia = 0 metros
+- TQ= 127 -> Distancia = 150 metros. 
