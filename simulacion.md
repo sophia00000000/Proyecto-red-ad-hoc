@@ -184,12 +184,12 @@ Se añadió un bloque que:
 - Calcula la distancia entre ellos.
 - Guarda en un archivo llamado resultados.txt la siguiente información:
 
-    Tiempo de simulación
-    Nombre del nodo receptor
-    Dirección del nodo origen
-    Reenviado por
-    TTL, TQ, Hops, SeqNumber
-    Distancia en metros
+    - Tiempo de simulación
+    - Nombre del nodo receptor
+    - Dirección del nodo origen
+    - Reenviado por
+    - TTL, TQ, Hops, SeqNumber
+    - Distancia en metros
 
 Ejemplo del código:
 
