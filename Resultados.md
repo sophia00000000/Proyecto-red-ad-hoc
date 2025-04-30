@@ -45,4 +45,43 @@ Resta: [1.3907499996079764e-07, 0.02242032618699996, 1.6191500007423087e-07, 0.0
 
 ![image](https://github.com/user-attachments/assets/3a63aa16-5d86-4519-b9b2-9d4ef5a87491)
 
+
+Los OGMs se generan de forma regular aunque hay picos de intervalos más largos.
 ---
+## TTL VS Tiempo
+
+Para ver si los paquetes se degradan mucho 
+Un TTL bajo puede significar rutas largas o reenvíos excesivos. 
+
+![image](https://github.com/user-attachments/assets/d9eca491-df3a-46dc-a946-18475f91d513)
+
+---
+## Origem
+
+Para concocer cuántos OGMs envió cada nodo y detectar nodos activos, silenciados o que participan más en la red.
+
+![image](https://github.com/user-attachments/assets/8f83edd9-4943-440f-8074-00f1a376a5db)
+
+---
+## TQ (Transmit Quality) 
+
+Para evaluar la calidad de los enlaces, TQ bajo puede significar interferencias o rutas inestables.
+
+![image](https://github.com/user-attachments/assets/a1c2161f-ca90-45d7-932e-68e89728f298)
+
+---
+# Distancia 
+En BATMAN La distancia se refiere a la distancia entre nodos en la red, y se mide por el número de saltos (hops) entre nodos.
+No calcula la distancia completa entre un origen y un destino, sino que se enfoca en encontrar el mejor nodo para el siguiente salto y luego deja que ese nodo haga lo mismo hasta que el paquete llegue al destino. 
+
+Cada nodo mantiene información sobre el mejor siguiente salto para cada destino, lo que implica una distancia variable según la configuración de la red.
+
+**Aproximación:**
+Se podría aproximar la distancia contando el número de saltos que el paquete sigue hasta el destino, considerando la información de la tabla de enrutamiento de cada nodo en el camino. Cada vez que un paquete de un salto se puede sumir que avanzó cierta distancia promedio 
+EJM:
+- o hops = 0m
+- 1 hops = 100m
+
+A su vez, cada vez que un ndoo genera un paquete, le pone un TTL inicial y cada salto lo reduce en una unidad. 
+
+###
