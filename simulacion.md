@@ -145,6 +145,7 @@ Seleccionar la carpeta inetmanet-4.x -> Finish
 ![imagen](https://github.com/user-attachments/assets/7d17acff-691d-48c0-90f7-27323613ecf9)
 
 Y así está disponible B.A.T.M.A.N junto con el ejemplo base a utilizar: ieee80211
+
 **Ruta:** inetmanet-4.x/examples/adhoc/ieee80211/
 
 ![imagen](https://github.com/user-attachments/assets/40167b4e-2a17-4977-9d5f-98b2328e9edc)
@@ -153,6 +154,7 @@ Y así está disponible B.A.T.M.A.N junto con el ejemplo base a utilizar: ieee80
 ## Configuración de ieee80211
 
 **Ruta:** inetmanet-4.x/src/inet/routing/extras/Batman.ned
+
 ![imagen](https://github.com/user-attachments/assets/dc0605d4-be3a-4c37-ad08-f3c0318e23b2)
 
 Agregar al final del archivo Batman.net el siguiente fragmento de còdigo:
@@ -167,6 +169,7 @@ gates:
 En OMNeT++, los gates son puntos de entrada y salida que permiten que los módulos simples se comuniquen entre sí. Cuando se modelan redes, estos gates permiten el envío y recepción de mensajes entre capas (por ejemplo, entre la capa de red y la capa de enlace o aplicación). INETMANET a veces tiene módulos heredados o incompletos, y al personalizarlo era necesario permitir conexiones explícitas entre módulos.
 
 **Ruta:** inetmanet-4.x/src/inet/routing/extras/batman/BatmanMain.cc
+
 ![imagen](https://github.com/user-attachments/assets/a55fb165-04b0-430b-8331-9f19295f23f7)
 
 Hay que hacer varios cambios en el archivo BatmanMain.cc, primero, se agregaron cabeceras para obtener información de movilidad, manipular archivos y trabajar con coordenadas:
