@@ -120,6 +120,8 @@ WITH_OSG=no
 
 ---
 
+ ***
+
 # Configuración de B.A.T.M.A.N
 
 Para INET 4.5 (biblioteca de modelos de código abierto para la simulación de redes de comunicación), la mejor opción es utilizar INETMANET ya que contiene los protocolos MANET incluyendo BATMAN, específicamente diseñados para ser compatibles con la versión de INET. Para descargarlo se utilizan los siguientes comandos:
@@ -150,6 +152,7 @@ Y así está disponible B.A.T.M.A.N junto con el ejemplo base a utilizar: ieee80
 
 ![imagen](https://github.com/user-attachments/assets/40167b4e-2a17-4977-9d5f-98b2328e9edc)
 
+ ***
 
 ## Configuración de ieee80211
 
@@ -210,6 +213,8 @@ outTxt << "Tiempo: " << simTime()
        << ", Distancia: " << distance << " m";
 ```
 Esto para analizar el comportamiento del protocolo BATMAN en una red móvil y estudiar cómo varía la distancia entre nodos con respecto al reenvío de paquetes, TTL o calidad del enlace (TQ), en el caso de la distancia siempre va a aparecer *N/A* debido a que BATMAN no calcula la distancia completa entre un nodo origen y un destino. Su enfoque se basa en encontrar el mejor vecino de un solo salto para cada destino, en lugar de determinar la ruta óptima completa.
+
+ ***
   
 ## Resumen Comandos totales
 
