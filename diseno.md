@@ -149,3 +149,4 @@ La modelación realizada establece una base sólida para la implementación de u
 - [Video de YouTube: Implementación de Red Ad Hoc con BATMAN](https://www.youtube.com/watch?v=121R1wPo2Eo)
 - Documentación oficial del protocolo BATMAN. https://www.open-mesh.org/projects/batman-adv/wiki/Quick-start-guide
 - Guías y manuales de configuración de redes ad hoc y mesh.
+- Presentación PROTOCOLO DE ENRUTAMIENTO B.A.T.M.A.N https://prezi.com/n_r03-j4jyxt/protocolo-de-enrutamiento-batman/
