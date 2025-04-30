@@ -125,6 +125,7 @@ WITH_OSG=no
 Para INET 4.5 (biblioteca de modelos de código abierto para la simulación de redes de comunicación), la mejor opción es utilizar INETMANET ya que contiene los protocolos MANET incluyendo BATMAN, específicamente diseñados para ser compatibles con la versión de INET. Para descargarlo se utilizan los siguientes comandos:
 
 ```bash
+sudo apt install git
 git clone https://github.com/aarizaq/inetmanet-4.x.git
 cd inetmanet-4.x
 git checkout v4.2.x
@@ -148,8 +149,60 @@ Y así está disponible B.A.T.M.A.N junto con el ejemplo base a utilizar: ieee80
 ![imagen](https://github.com/user-attachments/assets/40167b4e-2a17-4977-9d5f-98b2328e9edc)
 
 
+## Configuración de ieee80211
 
+Ruta: inetmanet-4.x/src/inet/routing/extras/Batman.ned 
+Agregar al final del archivo Batman.net el siguiente fragmento de còdigo:
 
+```bash
+gates:
+    input upperIn;
+    output upperOut;
+    input lowerIn;
+    output lowerOut;
+```
+En OMNeT++, los gates son puntos de entrada y salida que permiten que los módulos simples se comuniquen entre sí. Cuando se modelan redes, estos gates permiten el envío y recepción de mensajes entre capas (por ejemplo, entre la capa de red y la capa de enlace o aplicación). INETMANET a veces tiene módulos heredados o incompletos, y al personalizarlo era necesario permitir conexiones explícitas entre módulos.
+
+Ruta: inetmanet-4.x/src/inet/routing/extras/batman/BatmanMain.cc
+Hay que hacer varios cambios en el archivo BatmanMain.cc, primero, se agregaron cabeceras para obtener información de movilidad, manipular archivos y trabajar con coordenadas:
+
+```bash
+#include <fstream>  // Para escribir en archivos
+#include "inet/mobility/contract/IMobility.h"  // Para acceder a la posición de los nodos
+#include "inet/common/geometry/common/Coord.h"
+#include "inet/common/ModuleAccess.h"
+#include "inet/common/INETUtils.h"
+```
+Para poder obtener la posición del nodo que recibe un paquete y del nodo que lo originó, calcular la distancia entre ellos y guardar esos datos en un archivo .txt.
+
+Segundo, se modificó handleMessageWhenUp() para calcular distancia y guardar resultados
+
+Se añadió un bloque que:
+
+- Obtiene el módulo de movilidad del nodo receptor.
+- Encuentra el módulo de movilidad del nodo emisor (data->getOrig()).
+- Calcula la distancia entre ellos.
+- Guarda en un archivo llamado resultados.txt la siguiente información:
+
+    Tiempo de simulación
+    Nombre del nodo receptor
+    Dirección del nodo origen
+    Reenviado por
+    TTL, TQ, Hops, SeqNumber
+    Distancia en metros
+
+Ejemplo del código:
+
+```bash
+std::ofstream outTxt("resultados.txt", std::ios::app);
+outTxt << "Tiempo: " << simTime()
+       << ", Nodo: " << getParentModule()->getFullName()
+       << ", Origen: " << data->getOrig()
+       ...
+       << ", Distancia: " << distance << " m";
+```
+Esto para analizar el comportamiento del protocolo BATMAN en una red móvil y estudiar cómo varía la distancia entre nodos con respecto al reenvío de paquetes, TTL o calidad del enlace (TQ), en el caso de la distancia siempre va a aparecer N/A debido a que BATMAN no calcula la distancia completa entre un nodo origen y un destino. Su enfoque se basa en encontrar el mejor vecino de un solo salto para cada destino, en lugar de determinar la ruta óptima completa.
+  
 ## Comandos totales resumen
 
 ```bash
@@ -165,6 +218,7 @@ sudo apt-get install build-essential gcc g++ bison flex perl qtbase5-dev qtchoos
 sudo apt-get install libopenscenegraph-dev
 ./configure
 make
+sudo apt install git
 git clone https://github.com/aarizaq/inetmanet-4.x.git
 cd inetmanet-4.x
 git checkout -b inet4.5 origin/inet4.5
