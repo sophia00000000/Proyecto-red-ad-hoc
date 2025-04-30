@@ -66,11 +66,23 @@ Para concocer cuántos OGMs envió cada nodo y detectar nodos activos, silenciad
 ![image](https://github.com/user-attachments/assets/8f83edd9-4943-440f-8074-00f1a376a5db)
 
 ---
+
+
 ## TQ (Transmit Quality) 
 
-Para evaluar la calidad de los enlaces, TQ bajo puede significar interferencias o rutas inestables.
+Es el índice clave para evaluar la calidad de los enlacesde. Mide cuántos paquetes OGMs llegan bien entre nodos.
+
+Se basa en:
+- % de paquetes recibidos correctamente.
+- % de paquetes reenviados correctamente.
+- TQ = 255 -> Enlace prfecto sin perdida
+- TQ = 0 o bajo -> ineterferencia, prdidad de paquetres o camino inestable
+
+TQ bajo puede significar interferencias o rutas inestables.
 
 ![image](https://github.com/user-attachments/assets/a1c2161f-ca90-45d7-932e-68e89728f298)
+
+El QT varpia mucho, esto es nomarl en la simulación, ya que Batman actualiza sus rutas con frecuencia y los cambios en la tipologia hacen que el TQ se ajuste rápidamente. 
 
 ---
 # Distancia 
