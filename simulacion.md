@@ -213,7 +213,18 @@ outTxt << "Tiempo: " << simTime()
 Esto para analizar el comportamiento del protocolo BATMAN en una red móvil y estudiar cómo varía la distancia entre nodos con respecto al reenvío de paquetes, TTL o calidad del enlace (TQ), en el caso de la distancia siempre va a aparecer *N/A* debido a que BATMAN no calcula la distancia completa entre un nodo origen y un destino. Su enfoque se basa en encontrar el mejor vecino de un solo salto para cada destino, en lugar de determinar la ruta óptima completa.
 
  ***
-  
+
+# Resultado Simulación
+
+![imagen](https://github.com/user-attachments/assets/314aca75-ead4-4a5b-ab91-1e8efcaa89ee)
+
+![imagen](https://github.com/user-attachments/assets/8efc73f8-2526-4910-ab1c-4f528697dc9b)
+
+![imagen](https://github.com/user-attachments/assets/ae57812e-7949-4589-987a-cee0dbd278a5)
+
+
+ ***
+
 ## Resumen Comandos totales
 
 ```bash
