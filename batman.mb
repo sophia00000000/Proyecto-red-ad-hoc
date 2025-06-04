@@ -1,14 +1,19 @@
-# Instalación de B.A.T.M.A.N
+# 🛠 Instalación y Configuración de B.A.T.M.A.N. (Better Approach To Mobile Adhoc Networking)
+
+Este documento describe cómo instalar y configurar B.A.T.M.A.N. en Ubuntu para establecer una red ad-hoc entre múltiples nodos.
 
 ---
+
+## 📋 Requisitos previos
+
+Antes de comenzar, asegúrate de contar con los siguientes paquetes y privilegios de superusuario:
+
 ```bash
 sudo apt update
 sudo apt upgrade -y
 sudo apt install build-essential git dkms linux-headers-$(uname -r)
 sudo apt install batctl iw iproute2
-sudo modprobe batman-adv
-echo batman-adv | sudo tee -a /etc/modules
-```
+
 
 Ubuntu moderno ya incluye el módulo batman-adv, solo necesitas cargarlo:
 
