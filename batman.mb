@@ -1,7 +1,7 @@
 # Instalación de B.A.T.M.A.N
 
 ---
-```
+```bash
 sudo apt update
 sudo apt upgrade -y
 sudo apt install build-essential git dkms linux-headers-$(uname -r)
