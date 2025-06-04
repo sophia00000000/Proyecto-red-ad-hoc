@@ -1,0 +1,45 @@
+# Instalación de B.A.T.M.A.N
+
+---
+
+```
+sudo apt update
+sudo apt upgrade -y
+sudo apt install build-essential git dkms linux-headers-$(uname -r)
+sudo apt install batctl iw iproute2
+sudo modprobe batman-adv
+echo batman-adv | sudo tee -a /etc/modules
+```
+Ubuntu moderno ya incluye el módulo batman-adv, solo necesitas cargarlo:
+
+```
+sudo modprobe batman-adv
+```
+Para que se cargue automáticamente en cada arranque:
+
+```
+echo batman-adv | sudo tee -a /etc/modules
+```
+Desconectar solo wlp0s20f3 de NetworkManager
+```
+sudo nmcli device set wlp0s20f3 managed no
+```
+Establecer el modo y subir la interfaz:
+```
+sudo ip link set wlp0s20f3 down
+sudo iwconfig wlp0s20f3 mode ad-hoc
+sudo ip link set wlp0s20f3 up
+```
+Unirse a la red ad-hoc
+```
+sudo iwconfig wlp0s20f3 mode ad-hoc
+sudo iwconfig wlp0s20f3 essid red-angie
+sudo iwconfig wlp0s20f3 channel 1
+sudo ip link set wlp0s20f3 up
+```
+Verificar conexión: Debe mostrar una "Cell" con una dirección MAC (de la red ad-hoc)
+```
+iwconfig
+```
+
+---
