@@ -1,10 +1,10 @@
-# 🛠 Instalación y Configuración de B.A.T.M.A.N. (Better Approach To Mobile Adhoc Networking)
+#Instalación y Configuración de B.A.T.M.A.N. (Better Approach To Mobile Adhoc Networking)
 
 Este documento describe cómo instalar y configurar B.A.T.M.A.N. en Ubuntu para establecer una red ad-hoc entre múltiples nodos.
 
 ---
 
-## 📋 Requisitos previos
+##Requisitos previos
 
 Antes de comenzar, asegúrate de contar con los siguientes paquetes y privilegios de superusuario:
 
@@ -13,28 +13,39 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install build-essential git dkms linux-headers-$(uname -r)
 sudo apt install batctl iw iproute2
-
+```
 
 Ubuntu moderno ya incluye el módulo batman-adv, solo necesitas cargarlo:
 
 ```
 sudo modprobe batman-adv
 ```
+
 Para que se cargue automáticamente en cada arranque:
 
 ```
 echo batman-adv | sudo tee -a /etc/modules
 ```
+Para mirar la interfaz en cada computador
+
+```
+iw dev
+```
+
 Desconectar solo wlp0s20f3 de NetworkManager
+
 ```
 sudo nmcli device set wlp0s20f3 managed no
 ```
+
 Establecer el modo y subir la interfaz:
+
 ```
 sudo ip link set wlp0s20f3 down
 sudo iwconfig wlp0s20f3 mode ad-hoc
 sudo ip link set wlp0s20f3 up
 ```
+
 Unirse a la red ad-hoc
 ```
 sudo iwconfig wlp0s20f3 mode ad-hoc
@@ -42,9 +53,29 @@ sudo iwconfig wlp0s20f3 essid red-angie
 sudo iwconfig wlp0s20f3 channel 1
 sudo ip link set wlp0s20f3 up
 ```
+
 Verificar conexión: Debe mostrar una "Cell" con una dirección MAC (de la red ad-hoc)
+
 ```
 iwconfig
+```
+Activar BATMAN-adv sobre la interfaz Wi-Fi
+
+```
+sudo modprobe batman-adv
+sudo batctl if add wlp0s20f3
+sudo ip link set up dev bat0
+```
+Verificar que wlp0s20f3 está en BATMAN, debe salir como wlp0s20f3: active
+
+```
+sudo batctl if
+```
+
+Asignar IP  a bat0 (en cada nodo, diferente IP)
+
+```
+sudo ip addr add 10.0.0.X/24 dev bat0
 ```
 
 ---
