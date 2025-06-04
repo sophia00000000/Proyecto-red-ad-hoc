@@ -31,6 +31,13 @@ echo batman-adv | sudo tee -a /etc/modules
 
 ## ⚙️ Configuración de la interfaz de red
 
+Para ver la interfaz de cada computador:
+
+
+```bash
+iw dev
+```
+
 Desconectar `wlp0s20f3` de NetworkManager:
 
 ```bash
@@ -59,6 +66,7 @@ Verificar conexión (debe mostrar una "Cell" con dirección MAC):
 ```bash
 iwconfig
 ```
+![Captura desde 2025-06-04 15-31-59](https://github.com/user-attachments/assets/d6999ff5-4769-4b98-9a44-4d29313e061e)
 
 ---
 
