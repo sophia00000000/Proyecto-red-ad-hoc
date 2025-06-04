@@ -1,7 +1,6 @@
 # Instalación de B.A.T.M.A.N
 
 ---
-
 ```
 sudo apt update
 sudo apt upgrade -y
@@ -10,6 +9,7 @@ sudo apt install batctl iw iproute2
 sudo modprobe batman-adv
 echo batman-adv | sudo tee -a /etc/modules
 ```
+
 Ubuntu moderno ya incluye el módulo batman-adv, solo necesitas cargarlo:
 
 ```
