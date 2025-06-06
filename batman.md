@@ -100,7 +100,7 @@ En **cada nodo**, asigna una IP diferente dentro del rango `10.0.0.0/24`:
 sudo ip addr add 10.0.0.X/24 dev bat0
 ```
 
-Reemplaza `X` con el número de nodo, por ejemplo: `10.0.0.1`, `10.0.0.2`, etc.
+Reemplazar `X` con el número de nodo, por ejemplo: `10.0.0.1`, `10.0.0.2`, etc.
 
 ---
 
@@ -110,6 +110,27 @@ Puedes usar `ping` entre nodos para verificar la conectividad:
 
 ```bash
 ping 10.0.0.2
+```
+
+## Mensajes en netcat
+
+En el emisor
+
+```bash
+echo "Mensaje a Pc4" | nc 10.0.0.4
+```
+
+En el receptor
+
+```bash
+nc -l -p 5000
+ping 10.0.0.2
+```
+
+Comando para ver saltos
+
+```bash
+sudo batctl o
 ```
 
 ---
